@@ -1,0 +1,36 @@
+version: 4.1.35
+steps:
+  - prompt: Focus the browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: Click on the search icon.
+    commands:
+      - command: hover-image
+        description: search icon in the top right corner of the browser
+        action: click
+  - prompt: Click on the search icon.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: hover-text
+        text: Search
+        description: search icon in the browser toolbar
+        action: click
+  - prompt: Enter a search term and press enter.
+    commands:
+      - command: hover-text
+        text: Search
+        description: search input field in the browser toolbar
+        action: click
+      - command: type
+        text: custom cushions
+      - command: press-keys
+        keys:
+          - enter
+  - prompt: >-
+      Assert that search results are displayed.  # Use the content of the file
+      from the environment
+    commands:
+      - command: assert
+        expect: Found 165 search results for "custom cushions"
