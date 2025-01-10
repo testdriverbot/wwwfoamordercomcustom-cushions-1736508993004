@@ -1,0 +1,18 @@
+version: 4.1.35
+steps:
+  - prompt: Focus the browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: Assert that the webpage loads successfully.
+    commands:
+      - command: assert
+        expect: >-
+          the text "Indoor and Outdoor Custom Seat Cushions" is visible on the
+          webpage
+  - prompt: >-
+      Assert that the logo is visible on the homepage.  # Use the content of the
+      file from the environment
+    commands:
+      - command: assert
+        expect: the text "FOAM ORDER" is visible on the homepage
