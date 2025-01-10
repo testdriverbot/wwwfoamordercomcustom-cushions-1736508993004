@@ -1,0 +1,102 @@
+version: 4.1.35
+steps:
+  - prompt: Focus the browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: Click on each navigation menu item.
+    commands:
+      - command: hover-text
+        text: Replacement/Custom Cushions
+        description: first navigation menu item
+        action: click
+      - command: hover-text
+        text: Foam
+        description: second navigation menu item
+        action: click
+      - command: hover-text
+        text: Organic
+        description: third navigation menu item
+        action: click
+      - command: hover-text
+        text: Covers
+        description: fourth navigation menu item
+        action: click
+      - command: hover-text
+        text: Mattresses
+        description: fifth navigation menu item
+        action: click
+      - command: hover-text
+        text: Bedding Accessories
+        description: sixth navigation menu item
+        action: click
+      - command: hover-text
+        text: Neoprene
+        description: seventh navigation menu item
+        action: click
+      - command: hover-text
+        text: Commercial
+        description: eighth navigation menu item
+        action: click
+      - command: hover-text
+        text: DIY
+        description: ninth navigation menu item
+        action: click
+  - prompt: >-
+      Assert that each link redirects to the correct page without errors.  # Use
+      the content of the file from the environment
+    commands:
+      - command: hover-text
+        text: Replacement/Custom Cushions
+        description: first navigation menu item
+        action: click
+      - command: assert
+        expect: Replacement/Custom Cushions page is loaded
+      - command: hover-text
+        text: Foam
+        description: second navigation menu item
+        action: click
+      - command: assert
+        expect: Foam page is loaded
+      - command: hover-text
+        text: Organic
+        description: third navigation menu item
+        action: click
+      - command: assert
+        expect: Organic page is loaded
+      - command: hover-text
+        text: Covers
+        description: fourth navigation menu item
+        action: click
+      - command: assert
+        expect: Covers page is loaded
+      - command: hover-text
+        text: Mattresses
+        description: fifth navigation menu item
+        action: click
+      - command: assert
+        expect: Mattresses page is loaded
+      - command: hover-text
+        text: Bedding Accessories
+        description: sixth navigation menu item
+        action: click
+      - command: assert
+        expect: Bedding Accessories page is loaded
+      - command: hover-text
+        text: Neoprene
+        description: seventh navigation menu item
+        action: click
+      - command: assert
+        expect: Neoprene page is loaded
+      - command: hover-text
+        text: Commercial
+        description: eighth navigation menu item
+        action: click
+      - command: assert
+        expect: Commercial page is loaded
+      - command: hover-text
+        text: DIY
+        description: ninth navigation menu item
+        action: click
+      - command: assert
+        expect: DIY page is loaded
