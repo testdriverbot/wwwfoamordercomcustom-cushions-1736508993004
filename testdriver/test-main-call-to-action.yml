@@ -1,0 +1,22 @@
+version: 4.1.35
+steps:
+  - prompt: Focus the browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: Assert that the main call to action is visible.
+    commands:
+      - command: assert
+        expect: the "Ask Us a Question" button is visible
+  - prompt: Click the main call to action button.
+    commands:
+      - command: hover-text
+        text: Ask Us a Question
+        description: button in the bottom right corner
+        action: click
+  - prompt: >-
+      Assert that it leads to the correct page.  # Use the content of the file
+      from the environment
+    commands:
+      - command: assert
+        expect: the page URL is "foamorder.com/custom-cushions/"
